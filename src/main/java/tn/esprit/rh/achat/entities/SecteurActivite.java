@@ -20,7 +20,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class SecteurActivite implements Serializable{
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
