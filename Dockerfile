@@ -1,6 +1,6 @@
 FROM openjdk:11
 
-ARG NEXUS_URL=http://localhost:8081/repository/maven-releases/
+ARG NEXUS_URL=http://192.168.1.14:8081/repository/maven-releases/
 ARG GROUP_ID=tn.esprit.rh
 ARG ARTIFACT_ID=achat
 ARG ARTIFACT_VERSION=1.0
