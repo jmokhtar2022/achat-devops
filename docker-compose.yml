@@ -10,6 +10,8 @@ services:
     environment:
       MYSQL_DATABASE: achatdb
       MYSQL_USER: root
+    networks:
+      - mynetwork
 
   back:
     depends_on:
@@ -22,6 +24,8 @@ services:
       - .m2:/root/.m2
     stdin_open: true
     tty: true
+    networks:
+      - mynetwork
 
   front:
     image: mokhtar1234/achat-front:latest
@@ -29,5 +33,7 @@ services:
       - "80:80"
     depends_on:
       - back
+    networks:
+      - mynetwork
 volumes:
   db:
