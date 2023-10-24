@@ -12,7 +12,8 @@ services:
       MYSQL_DATABASE: achatdb
       MYSQL_PASSWORD: null
     networks:
-      - mynetwork
+      mynetwork:
+        ipv4_address: 172.18.0.2  # Specify the desired fixed IP address
 
   back:
     depends_on:
@@ -26,8 +27,8 @@ services:
     stdin_open: true
     tty: true
     networks:
-      - mynetwork
-
+      mynetwork:
+        ipv4_address: 172.18.0.3  # Specify a different fixed IP address
 
   front:
     image: mokhtar1234/achat-front:latest
@@ -36,8 +37,15 @@ services:
     depends_on:
       - back
     networks:
-      - mynetwork
+      mynetwork:
+        ipv4_address: 172.18.0.4  # Specify a different fixed IP address
+
 volumes:
   db:
 networks:
   mynetwork:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/16
