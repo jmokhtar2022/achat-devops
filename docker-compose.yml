@@ -10,7 +10,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_DATABASE: achatdb
     networks:
-      - mohamedmokhtar_jaafar_5arctic2_mynetwork
+      - mynetwork
 
   back:
     depends_on:
@@ -24,7 +24,7 @@ services:
     stdin_open: true
     tty: true
     networks:
-      - mohamedmokhtar_jaafar_5arctic2_mynetwork
+      - mynetwork
 
   front:
     image: mokhtar1234/achat-front:latest
@@ -33,8 +33,8 @@ services:
     depends_on:
       - back
     networks:
-      - mohamedmokhtar_jaafar_5arctic2_mynetwork
+      - mynetwork
 volumes:
   db:
 networks:
-  mohamedmokhtar_jaafar_5arctic2_mynetwork:
+  mynetwork:
