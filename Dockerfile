@@ -1,7 +1,7 @@
 FROM openjdk:11
 
 ENV NEXUS_URL=http://192.168.1.14:8081/repository/maven-releases/
-ENV GROUP_ID=tn.esprit.rh
+ENV GROUP_ID=tn/esprit/rh
 ENV ARTIFACT_ID=achat
 ENV ARTIFACT_VERSION=1.0
 ENV ARTIFACT_PACKAGING=jar
