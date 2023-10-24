@@ -1,10 +1,10 @@
 FROM openjdk:11
 
-ARG NEXUS_URL=http://192.168.1.14:8081/repository/maven-releases/
-ARG GROUP_ID=tn.esprit.rh
-ARG ARTIFACT_ID=achat
-ARG ARTIFACT_VERSION=1.0
-ARG ARTIFACT_PACKAGING=jar
+ENV NEXUS_URL=http://192.168.1.14:8081/repository/maven-releases/
+ENV GROUP_ID=tn.esprit.rh
+ENV ARTIFACT_ID=achat
+ENV ARTIFACT_VERSION=1.0
+ENV ARTIFACT_PACKAGING=jar
 
 
 EXPOSE 8089
