@@ -3,6 +3,8 @@ services:
   db:
     image: mysql
     restart: unless-stopped
+    ports:
+      - "3306:3306"
     volumes:
       - db:/var/lib/mysql
     environment:
@@ -18,7 +20,7 @@ services:
     build: ./
     restart: on-failure
     ports:
-      - 6868:8082
+      - "6868:8082"
     volumes:
       - .m2:/root/.m2
     stdin_open: true
