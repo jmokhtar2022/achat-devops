@@ -25,6 +25,11 @@ services:
     tty: true
     networks:
       - mynetwork
+    environment:
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=
+      - DATABASE_URL=jdbc:mysql://db:3306/achatdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      - DATABASE_DRIVER=org.hibernate.dialect.MySQL5InnoDBDialect
 
   front:
     image: mokhtar1234/achat-front:latest
