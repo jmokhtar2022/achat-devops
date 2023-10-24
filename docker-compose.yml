@@ -9,8 +9,8 @@ services:
     volumes:
       - db:/var/lib/mysql
     environment:
-      MYSQL_USER: "root"
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_USER: mokhtar
+      MYSQL_PASSWORD: jaafar
       MYSQL_DATABASE: achatdb
     networks:
       - mynetwork
