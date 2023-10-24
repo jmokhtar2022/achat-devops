@@ -9,7 +9,6 @@ services:
       - db:/var/lib/mysql
     environment:
       MYSQL_DATABASE: achatdb
-      MYSQL_USER: root
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     networks:
       - mynetwork
