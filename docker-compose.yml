@@ -37,3 +37,5 @@ services:
       - mynetwork
 volumes:
   db:
+networks:
+  mynetwork:
