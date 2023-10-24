@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.1'
 services:
   db:
     image: mysql
@@ -9,9 +9,8 @@ services:
     volumes:
       - db:/var/lib/mysql
     environment:
-      MYSQL_USER: mokhtar
-      MYSQL_PASSWORD: jaafar
-      MYSQL_DATABASE: achatdb
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: ""
     networks:
       - mynetwork
 
