@@ -16,12 +16,10 @@ services:
   back:
     depends_on:
       - db
-    build: ./
+    image: mokhtar1234/achat-devops:116
     restart: on-failure
     ports:
       - "6868:8089"
-    volumes:
-      - .m2:/root/.m2
     stdin_open: true
     tty: true
     networks:
