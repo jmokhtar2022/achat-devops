@@ -16,7 +16,7 @@ services:
   back:
     depends_on:
       - db
-    image: mokhtar1234/achat-devops:116
+    build: ./
     restart: on-failure
     ports:
       - "6868:8089"
