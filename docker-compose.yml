@@ -41,7 +41,7 @@ services:
         ipv4_address: 172.18.0.4  # Specify a different fixed IP address
 
 volumes:
-  db:
+  mysql_data:
 networks:
   mynetwork:
     driver: bridge
