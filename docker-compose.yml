@@ -17,6 +17,7 @@ services:
     depends_on:
       - db
     build: ./
+    container_name: back
     restart: on-failure
     ports:
       - "6868:8089"
