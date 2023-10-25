@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM openjdk:11-oracle
 
 ENV NEXUS_URL=http://192.168.1.14:8081/repository/maven-releases/
 ENV GROUP_ID=tn/esprit/rh
