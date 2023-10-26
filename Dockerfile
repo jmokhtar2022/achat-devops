@@ -8,6 +8,6 @@ WORKDIR /app
 COPY target/achat-1.0.jar achat-1.0.jar
 
   # Exposez le port sur lequel votre application Spring Boot écoute
-EXPOSE 8083
+EXPOSE 8089
   # Commande pour exécuter votre application Spring Boot
 CMD ["java", "-jar", "achat-1.0.jar"]
