@@ -26,6 +26,8 @@ services:
       - "6868:8089"
     stdin_open: true
     tty: true
+    environment:
+      SPRING_PROFILES_ACTIVE: actuator
     networks:
       mynetwork:
         ipv4_address: 172.18.0.3  # Specify a different fixed IP address
