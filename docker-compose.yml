@@ -19,7 +19,7 @@ services:
   back:
     depends_on:
       - db
-    build: mokhtar1234/achat-devops:latest
+    image: mokhtar1234/achat-devops:latest
     container_name: back
     restart: on-failure
     ports:
