@@ -28,6 +28,8 @@ services:
     tty: true
     environment:
       SPRING_PROFILES_ACTIVE: prod,actuator
+      MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED: "true"
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: prometheus
     networks:
       mynetwork:
         ipv4_address: 172.18.0.3  # Specify a different fixed IP address
