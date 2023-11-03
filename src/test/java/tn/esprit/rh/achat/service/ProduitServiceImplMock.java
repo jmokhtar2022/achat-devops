@@ -16,9 +16,9 @@ import tn.esprit.rh.achat.services.ProduitServiceImpl;
 
 import java.util.*;
 
-@SpringBootTest
+
 @ExtendWith(MockitoExtension.class)
-public class ProduitServiceImplMock {
+ class ProduitServiceImplMock {
 
     ProduitRepository produitRepository = Mockito.mock(ProduitRepository.class);
 
@@ -41,38 +41,43 @@ public class ProduitServiceImplMock {
     };
 
     @Test
-    public void testretrieveAllProduits()
+     void testretrieveAllProduits()
     {
         Mockito.when(produitRepository.findAll()).thenReturn(produits);
         List<Produit>produitList=produitService.retrieveAllProduits();
-        Assertions.assertNotNull(produitList);
+        Assertions.assertEquals(3,produitList.size());
     }
 
     @Test
-    public void testretrieveProduit()
+     void testretrieveProduit()
     {
         Mockito.when(produitRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(produit1));
         Produit produit=produitService.retrieveProduit(1L);
-        Assertions.assertNotNull(produit);
+        Assertions.assertEquals("f1",produit1.getCodeProduit());
     }
 
     @Test
-    public void testaddProduit()
+     void testaddProduit()
     {
         Mockito.when(produitRepository.save(produits.get(1))).thenReturn(produits.get(1));
        Produit savedProduct=produitService.addProduit(produits.get(1));
-        Assertions.assertNotNull(savedProduct);
+        Assertions.assertEquals(111,produit1.getPrix());
     }
 
     @Test
-    public void testupdateProduit()
+     void testupdateProduit()
     {
-        Mockito.when(produitRepository.save(produits.get(2))).thenReturn(produits.get(2));
-        Produit updatedProduct=produitService.updateProduit(produits.get(2));
-        Assertions.assertNotNull(updatedProduct);
+        Produit updatedProduit = new Produit(1L, "UpdatedCode", "Updatedlibelle", 999, new Date(), new Date(), new Stock(), new HashSet<>(), new CategorieProduit());
+        Mockito.when(produitRepository.save(updatedProduit)).thenReturn(updatedProduit);
+        Produit savedProduct = produitService.updateProduit(updatedProduit);
+        Mockito.verify(produitRepository, Mockito.times(1)).save(updatedProduit);
+        Assertions.assertEquals("UpdatedCode", savedProduct.getCodeProduit());
+        Assertions.assertEquals("Updatedlibelle", savedProduct.getLibelleProduit());
+        Assertions.assertEquals(999, savedProduct.getPrix());
+
     }
     @Test
-    public void testdeleteProduit()
+     void testdeleteProduit()
     {
         Mockito.doNothing().when(produitRepository).deleteById(Mockito.anyLong());
         produitService.deleteProduit(3L);
