@@ -18,8 +18,8 @@ services:
     backend:
         depends_on:
             - db
-        image: bileljemai/achat-devops:latest
-        container_name: back
+        image: bileljemai/achat-image:latest
+        container_name: backend
         restart: on-failure
         ports:
             - "7070:8089"
@@ -34,7 +34,7 @@ services:
         ports:
             - "80:80"
         depends_on:
-            - back
+            - backend
         networks:
             mynetwork:
                 ipv4_address: 172.18.0.4

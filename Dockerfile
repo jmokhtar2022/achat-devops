@@ -1,5 +1,5 @@
 # Use a specific OpenJDK 11 image
-FROM openjdk:11-jre-slim
+FROM openjdk:11-oracle
 
 # Set the Nexus URL as an environment variable
 ENV NEXUS_URL=http://192.168.1.222:8081/repository/maven-releases/
