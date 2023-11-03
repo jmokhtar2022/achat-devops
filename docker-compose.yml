@@ -1,0 +1,50 @@
+version: '3.1'
+services:
+    db:
+        image: mysql:5.7
+        container_name: database
+        restart: unless-stopped
+        ports:
+            - "3306:3306"
+        volumes:
+            - mysql_data:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: achatdb
+        networks:
+            mynetwork:
+                ipv4_address: 172.18.0.2
+
+    backend:
+        depends_on:
+            - db
+        image: bileljemai/achat-devops:latest
+        container_name: back
+        restart: on-failure
+        ports:
+            - "7070:8089"
+        stdin_open: true
+        tty: true
+        networks:
+            mynetwork:
+                ipv4_address: 172.18.0.3
+
+    frontend:
+        image: bileljemai/front:latest
+        ports:
+            - "80:80"
+        depends_on:
+            - back
+        networks:
+            mynetwork:
+                ipv4_address: 172.18.0.4
+
+volumes:
+    mysql_data:
+networks:
+    mynetwork:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.18.0.0/16
