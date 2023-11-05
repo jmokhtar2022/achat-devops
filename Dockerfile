@@ -10,4 +10,4 @@ COPY target/achat-1.9.2.jar .
 EXPOSE 8089
 
 # Set the command to run the Spring Boot application
-CMD ["java", "-jar", "achat-1.9.2.jar"]
+CMD ["java", "-jar", "achat-1.9.2.jar"
