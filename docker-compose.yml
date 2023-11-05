@@ -12,22 +12,18 @@ services:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: achatdb
         networks:
-            mynetwork:
-                ipv4_address: 172.18.0.2
+            - mynetwork
 
     backend:
-        depends_on:
-            - db
         image: bileljemai/achat-devops:latest
         container_name: backend
         restart: on-failure
         ports:
             - "7070:8089"
-        stdin_open: true
-        tty: true
+        depends_on:
+            - db
         networks:
-            mynetwork:
-                ipv4_address: 172.18.0.3
+            - mynetwork
 
     frontend:
         image: bileljemai/front:latest
@@ -36,15 +32,11 @@ services:
         depends_on:
             - backend
         networks:
-            mynetwork:
-                ipv4_address: 172.18.0.4
+            - mynetwork
 
 volumes:
     mysql_data:
+
 networks:
     mynetwork:
         driver: bridge
-        ipam:
-            driver: default
-            config:
-                - subnet: 172.18.0.0/16
