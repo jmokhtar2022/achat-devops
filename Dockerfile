@@ -1,13 +1,17 @@
-# Use an official OpenJDK runtime as the base image
-FROM openjdk:11-jre-slim
+FROM openjdk:11-oracle
 
-# Set the working directory in the container
-WORKDIR /app
 
-# Copy the executable JAR file and any other necessary files
-COPY target/achat-1.9.2.jar .
+ENV NEXUS_URL=http://192.168.1.18:8081/repository/maven-releases/
+ENV GROUP_ID=tn/esprit/rh
+ENV ARTIFACT_ID=achat
+ENV ARTIFACT_VERSION=1.0
+ENV ARTIFACT_PACKAGING=jar
+
+ENV MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED=true
+ENV MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=prometheus
 
 EXPOSE 8089
 
-# Set the command to run the Spring Boot application
-CMD ["java", "-jar", "achat-1.9.2.jar"
+RUN curl -o /${ARTIFACT_ID}-${ARTIFACT_VERSION}.${ARTIFACT_PACKAGING} ${NEXUS_URL}${GROUP_ID}/${ARTIFACT_ID}/${ARTIFACT_VERSION}/${ARTIFACT_ID}-${ARTIFACT_VERSION}.${ARTIFACT_PACKAGING}
+
+CMD java -jar -Dspring.profiles.active=actuator,prod /${ARTIFACT_ID}-${ARTIFACT_VERSION}.${ARTIFACT_PACKAGING}
