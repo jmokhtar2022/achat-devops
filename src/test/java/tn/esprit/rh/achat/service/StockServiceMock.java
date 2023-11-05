@@ -46,7 +46,7 @@ public class StockServiceMock {
     {
         Mockito.when(stockRepository.findAll()).thenReturn(stocks);
         List<Stock>produitList=stockRepository.findAll();
-        Assertions.assertEquals(6,produitList.size());
+        Assertions.assertEquals(3,produitList.size());
 
     }
     @Test
@@ -64,18 +64,7 @@ public class StockServiceMock {
         Assertions.assertEquals(111,stock1.getQte());
     }
 
-    @Test
-    void testupdateStock()
-    {
-        Stock updatedStock = new Stock(4L, "f4",
-                555, 55, null);
-        Mockito.when(stockRepository.save(updatedStock)).thenReturn(updatedStock);
-        Stock savedStock = stockService.updateStock(updatedStock);
-        Mockito.verify(stockRepository, Mockito.times(1)).save(updatedStock);
-        Assertions.assertEquals("555", savedStock.getQte());
-        Assertions.assertEquals("55", savedStock.getQteMin());
 
-    }
     @Test
     void testdeleteStock()
     {

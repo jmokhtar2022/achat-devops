@@ -13,3 +13,11 @@ l
 <src/test/java/tn/esprit/rh/achat/service/StockJUnitTest.java,a\1\a179303bf57273daaf4682b2325905e4d7b6b9c6
 B
 docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
+u
+Esrc/main/java/tn/esprit/rh/achat/controllers/StockRestController.java,2\2\2217e1a178510d28a7fc03ee4626b1821fa022bd
+y
+Isrc/main/java/tn/esprit/rh/achat/services/SecteurActiviteServiceImpl.java,3\2\32b3d8f077f3fcf4a5b9c9bb14cf0639da0bf07d
+r
+Bsrc/main/java/tn/esprit/rh/achat/repositories/StockRepository.java,b\4\b47681879c423e7163b8c95884a974b08be8b1c3
+l
+<src/main/java/tn/esprit/rh/achat/services/IStockService.java,8\f\8fb7acc6bc4b1fa83f73fe2e618701eb76ae29a3

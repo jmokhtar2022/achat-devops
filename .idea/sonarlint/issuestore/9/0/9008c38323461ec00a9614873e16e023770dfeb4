@@ -1,9 +1,5 @@
 
 ­
-java:S3577"Rename class "StockServiceMock" to match the regular expression: '^((Test|IT)[a-zA-Z0-9_]+|[A-Z][a-zA-Z0-9_]*(Test|Tests|TestCase|IT|ITCase))$'(öûƒÓ8ä¤åÿ¹1
+java:S3577"Rename class "StockServiceMock" to match the regular expression: '^((Test|IT)[a-zA-Z0-9_]+|[A-Z][a-zA-Z0-9_]*(Test|Tests|TestCase|IT|ITCase))$'(öûƒÓ8Ò®­Šº1
 ;
-java:S5786"Remove this 'public' modifier.(öûƒÓ8å¤åÿ¹1
-\
-java:S5845K"?Change the assertion arguments to not compare dissimilar types.(çï­µ8æ¤åÿ¹1
-\
-java:S5845L"?Change the assertion arguments to not compare dissimilar types.(ÂÌ¢³8ç¤åÿ¹1
+java:S5786"Remove this 'public' modifier.(öûƒÓ8Ó®­Šº1
