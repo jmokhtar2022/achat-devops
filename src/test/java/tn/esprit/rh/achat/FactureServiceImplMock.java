@@ -43,7 +43,7 @@ public class FactureServiceImplMock {
     void TestretrieveAllFactures() {
         Mockito.when(factureRepository.findAll()).thenReturn(factures);
         List<Facture> produitList = factureService.retrieveAllFactures();
-        Assertions.assertEquals(3, produitList.size());
+        Assertions.assertEquals(4, produitList.size());
     }
 
     @Test
