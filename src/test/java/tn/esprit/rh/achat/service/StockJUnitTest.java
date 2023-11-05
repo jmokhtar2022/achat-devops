@@ -20,6 +20,8 @@ public class StockJUnitTest {
     Stock stock1 = new Stock(1L, "f1",111, 11, null);
     Stock stock2 = new Stock(2L, "f2",222, 22, null);
     Stock stock3 = new Stock(3L, "f3", 333, 33, null);
+    Stock stock4 = new Stock(4L, "f4", 4, 44, null);
+    Stock stock5 = new Stock(5L, "f5", 5, 55, null);
     @Test
     public void getCorrectStockTest() {
         Stock stock1 = new Stock(10L, "f1", 111, 11, null);
@@ -36,6 +38,8 @@ public class StockJUnitTest {
         stockServiceImpl.addStock(stock1);
         stockServiceImpl.addStock(stock2);
         stockServiceImpl.addStock(stock3);
+        stockServiceImpl.addStock(stock4);
+        stockServiceImpl.addStock(stock5);
     }
     @Test
     @Order(2)
@@ -45,8 +49,9 @@ public class StockJUnitTest {
 
     @Test
     @Order(3)
-    public void VerifyStockStatus(){
-        stockServiceImpl.retrieveStatusStock();
+    public void deleteStock(){
+        String response = stockServiceImpl.retrieveStatusStock();
+        System.out.println(response);
     }
 
 
