@@ -1,0 +1,15 @@
+
+I
+java:S3599 ",Use another way to initialize this instance.(±Éäş8òÀ˜æ¹1
+{
+java:S1171!"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8÷À˜æ¹1
+X
+java:S18547";Remove this useless assignment to local variable "produit".(ÑÍ³Ÿ8ƒÁ˜æ¹1
+I
+java:S14817",Remove this unused "produit" local variable.(ÑÍ³Ÿ8‰Á˜æ¹1
+b
+java:S1854?"@Remove this useless assignment to local variable "savedProduct".(Œ¾ÚÕşÿÿÿÿ8‹Á˜æ¹1
+S
+java:S1481?"1Remove this unused "savedProduct" local variable.(Œ¾ÚÕşÿÿÿÿ8Á˜æ¹1
+M
+java:S59600"+Remove this assertion from production code.(“˜½øÿÿÿÿ8œÁ˜æ¹1
