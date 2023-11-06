@@ -22,7 +22,7 @@ public class FactureServiceImplJUnit {
     @Order(1)
     public void testRetrieveAllUsers() {
         List<Facture> listUsers = factureService.retrieveAllFactures();
-        Assertions.assertEquals(5, listUsers.size());
+        Assertions.assertEquals(7, listUsers.size());
     }
 
     @Test
