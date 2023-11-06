@@ -16,7 +16,7 @@ services:
     depends_on:
       - mysqldb
     build: ./
-    image: firaskill12/achat-image:abc
+    image: mahdibenrejeb7/achat-image:abc
     ports:
       - 8089:8089
     environment:
@@ -29,7 +29,7 @@ services:
   front:
     container_name: front
     build: ./
-    image: firaskill12/front-image:abbr
+    image: mahdibenrejeb7/front-image:abbr
     ports:
       - 4200:80
 
